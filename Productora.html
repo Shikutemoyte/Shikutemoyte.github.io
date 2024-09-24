@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Productora de Sonido</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para el Header */
+        header {
+            background-color: #333; /* Fondo oscuro */
+            color: #fff; /* Texto blanco */
+            display: flex; /* Uso de flexbox */
+            justify-content: space-between; /* Espacio entre logo y menú */
+            align-items: center; /* Alinear verticalmente */
+            padding: 20px;
+        }
+
+        .header-logo img {
+            width: 150px; /* Ancho del logo */
+        }
+
+        nav ul {
+            list-style: none; /* Elimina puntos de la lista */
+            display: flex; /* Muestra los elementos en fila */
+            gap: 20px; /* Espacio entre elementos del menú */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #fff; /* Color del texto */
+            text-decoration: none; /* Sin subrayado */
+            transition: color 0.3s ease; /* Transición de color */
+        }
+
+        nav ul li a:hover {
+            color: #f4d03f; /* Color al pasar el mouse */
+        }
+
+        /* Estilos para la sección Hero */
+        .hero {
+            background-color: #f4f4f4; /* Fondo claro */
+            text-align: center; /* Centrar texto */
+            padding: 60px 20px; /* Espaciado interno */
+        }
+
+        .hero h1 {
+            font-size: 2.5em; /* Tamaño del título */
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            margin-bottom: 30px; /* Espacio debajo del párrafo */
+        }
+
+        .cta {
+            background-color: #f4d03f; /* Fondo amarillo */
+            color: #333; /* Texto oscuro */
+            padding: 10px 20px; /* Espaciado interno */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición de fondo */
+        }
+
+        .cta:hover {
+            background-color: #333; /* Fondo oscuro al pasar el mouse */
+            color: #fff; /* Texto blanco */
+        }
+
+        /* Estilos para la sección de dos columnas */
+        .dos-columnas {
+            display: flex; /* Uso de flexbox */
+            gap: 20px; /* Espacio entre columnas */
+            padding: 40px 20px; /* Espaciado interno */
+        }
+
+        .columna-imagen img {
+            width: 100%; /* Imagen ocupa todo el ancho */
+            max-width: 400px; /* Ancho máximo de la imagen */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        .columna-texto h2 {
+            margin-bottom: 10px; /* Espacio debajo del título */
+        }
+
+        .columna-texto p {
+            margin-bottom: 20px; /* Espacio debajo del párrafo */
+        }
+
+        .columna-texto a {
+            background-color: #f4d03f; /* Fondo amarillo */
+            color: #333; /* Texto oscuro */
+            padding: 10px 15px; /* Espaciado interno */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Estilos para la Galería */
+        .galeria {
+            display: flex; /* Uso de flexbox */
+            flex-wrap: wrap; /* Permite ajustar en filas */
+            justify-content: space-between; /* Espacio uniforme entre imágenes */
+            gap: 20px; /* Espacio entre imágenes */
+            padding: 20px; /* Espaciado interno */
+            background-color: #f4f4f4; /* Fondo gris claro */
+        }
+
+        .galeria img {
+            width: 100%; /* Ancho completo */
+            max-width: 300px; /* Ancho máximo */
+            border-radius: 10px; /* Bordes redondeados */
+            transition: transform 0.3s ease; /* Transición de zoom */
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05); /* Efecto de zoom */
+        }
+
+        /* Estilos para el Footer */
+        footer {
+            background-color: #333; /* Fondo oscuro */
+            color: #fff; /* Texto blanco */
+            padding: 40px 20px; /* Espaciado interno */
+        }
+
+        .footer-contenido {
+            display: flex; /* Uso de flexbox */
+            flex-wrap: wrap; /* Permite que las columnas se ajusten */
+            justify-content: space-between; /* Espacio uniforme entre columnas */
+            gap: 20px; /* Espacio entre columnas */
+        }
+
+        .footer-columna {
+            flex: 1; /* Cada columna ocupa el mismo espacio */
+            min-width: 200px; /* Ancho mínimo */
+            padding: 10px; /* Espacio interno */
+        }
+
+        .footer-lista {
+            list-style: none; /* Elimina los puntos de las listas */
+            padding: 0; /* Elimina el padding */
+        }
+
+        .footer-lista li {
+            margin-bottom: 10px; /* Espacio entre elementos */
+        }
+
+        .footer-lista li a {
+            color: #fff; /* Color de los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            transition: color 0.3s ease; /* Transición de color */
+        }
+
+        .footer-lista li a:hover {
+            color: #f4d03f; /* Color al pasar el mouse */
+        }
+
+        /* Estilos para los botones de redes sociales */
+        .footer-redes-sociales a {
+            display: inline-block; /* Permite alinear los iconos */
+            margin-right: 10px; /* Espacio entre iconos */
+            width: 40px; /* Ancho del botón */
+            height: 40px; /* Altura del botón */
+            background-color: #f4d03f; /* Color de fondo amarillo */
+            border-radius: 50%; /* Forma redonda */
+            display: flex; /* Uso de flexbox para centrar el contenido */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            color: #333; /* Color del icono */
+            font-size: 20px; /* Tamaño del icono */
+            text-decoration: none; /* Sin subrayado */
+            transition: background-color 0.3s ease; /* Transición de color suave */
+        }
+
+        .footer-redes-sociales a:hover {
+            background-color: #fff; /* Cambia el fondo al pasar el mouse */
+            color: #333; /* Cambia el color del icono */
+        }
+
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            .header-logo, .footer-columna {
+                text-align: center; /* Centra el texto en pantallas pequeñas */
+            }
+
+            .dos-columnas {
+                flex-direction: column; /* Apila columnas en pantallas pequeñas */
+            }
+
+            .footer-contenido {
+                flex-direction: column; /* Apila columnas en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sección Header -->
+<header>
+    <div class="header-logo">
+        <img src="logo.png" alt="Logo de la Empresa">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sección Hero -->
+<section class="hero">
+    <h1>Bienvenido a nuestra Productora de Sonido</h1>
+    <p>Ofrecemos los mejores servicios de sonido para eventos inolvidables.</p>
+    <a href="#" class="cta">Ver Servicios</a>
+</section>
+
+<!-- Sección con dos columnas -->
+<section class="dos-columnas">
+    <div class="columna-imagen">
+        <img src="imagen.jpg" alt="Descripción de la imagen">
+    </div>
+    <div class="columna-texto">
+        <h2>Nuestra Misión</h2>
+        <p>Nos dedicamos a proporcionar servicios de sonido de alta calidad para cualquier tipo de evento.</p>
+        <a href="#">Descubre nuestros servicios</a>
+    </div>
+</section>
+
+<!-- Sección de Galería -->
+<section class="galeria">
+    <img src="imagen1.jpg" alt="Imagen 1">
+    <img src="imagen2.jpg" alt="Imagen 2">
+    <img src="imagen3.jpg" alt="Imagen 3">
+    <img src="imagen4.jpg" alt="Imagen 4">
+    <img src="imagen5.jpg" alt="Imagen 5">
+    <img src="imagen6.jpg" alt="Imagen 6">
+</section>
+
+<!-- Sección Footer -->
+<footer>
+    <div class="footer-contenido">
+        <div class="footer-columna footer-logo">
+            <img src="logo.png" alt="Logo de la Empresa">
+        </div>
+        <div class="footer-columna">
+            <h3>Servicios</h3>
+            <ul class="footer-lista">
+                <li><a href="#">Sonido para Eventos</a></li>
+                <li><a href="#">Alquiler de Equipos</a></li>
+                <li><a href="#">Asesoría Técnica</a></li>
+                <li><a href="#">Producción de Audio</a></li>
+            </ul>
+        </div>
+        <div class="footer-columna">
+            <h3>Legales</h3>
+            <ul class="footer-lista">
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Derechos de Autor</a></li>
+                <li><a href="#">Aviso Legal</a></li>
+            </ul>
+        </div>
+        <div class="footer-columna footer-redes-sociales">
+            <h3>Síguenos</h3>
+            <a href="#" title="Facebook">F</a>
+            <a href="#" title="Twitter">T</a>
+            <a href="#" title="Instagram">I</a>
+            <a href="#" title="LinkedIn">L</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
